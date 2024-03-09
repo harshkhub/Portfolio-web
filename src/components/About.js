@@ -26,7 +26,7 @@ const About = () => {
                         rel = "nonreferrer"
                         href='https://www.linkedin.com/in/harsh-khubchandani-19207b238/'
                         >
-                        <FontAwesomeIcon icon = {faLinkedinIn} color = "#4d4d4e" />
+                        <FontAwesomeIcon icon = {faLinkedinIn}/>
                         </a>
                     </li>
                     <li>
@@ -35,7 +35,7 @@ const About = () => {
                         rel = "nonreferrers"
                         href='https://github.com/harshkhub'
                         >
-                        <FontAwesomeIcon icon = {faGithub} color = "#4d4d4e" />
+                        <FontAwesomeIcon icon = {faGithub} />
                         </a>
                     </li>
                 </ul>

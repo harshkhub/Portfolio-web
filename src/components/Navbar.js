@@ -3,13 +3,14 @@ import logo from './images/logo.png'
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Navbar.css' 
+import Experiences from './Experiences.js'
 
 const Navbar = () =>{
 
     const[click, setClick] = useState(false)
     const handleclick = () => setClick(!click)
 
-    const  closeMenu = () => setClick(false)
+    const closeMenu = () => setClick(false)
 
     return(
         <div className="header">
@@ -27,7 +28,7 @@ const Navbar = () =>{
                         <a href = '/' onClick={{closeMenu}}>About</a>
                     </li>
                     <li className='nav-item'>
-                        <a href = '#experiences' onClick={{closeMenu}}>Experiences</a>
+                        <a href = 'experiences' >Experiences</a>
                     </li>
                     <li className='nav-item'>
                         <a href = '#projects' onClick={{closeMenu}}>Projects</a>

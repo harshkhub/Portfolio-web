@@ -65,11 +65,13 @@
         font-size: 50px;
         z-index: 5;
         margin: 10px;
+
     
 }
 
 .about .socialLinks a{
     margin-right: 10px;
+    color: black;
 }
 
 
