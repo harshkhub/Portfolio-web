@@ -1,0 +1,18 @@
+.experiences-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .experience {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+  }
+  
+  .line {
+    width: 2px;
+    height: 100px; /* Adjust the height of the line */
+    background-color: #ccc;
+    margin: 0 20px; /* Adjust the spacing between the line and experiences */
+  }

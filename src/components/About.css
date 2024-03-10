@@ -14,6 +14,14 @@
     
 }
 
+.line {
+    display: block;
+    width: 100%; /* Adjust the width of the line */
+    height: 2px; /* Adjust the height of the line */
+    background-color: black;
+    margin: 0 20px; /* Adjust the spacing around the line */
+  }
+
 .about .image-left{
     width: 90%;
     margin-left: 15px;

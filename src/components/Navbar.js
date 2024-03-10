@@ -25,10 +25,10 @@ const Navbar = () =>{
                 </div>
                 <ul className={click ? "nav-menu active" : "nav-menu"}>
                     <li className='nav-item'>
-                        <a href = '/' onClick={{closeMenu}}>About</a>
+                        <a href = '#about' onClick={closeMenu}>About</a>
                     </li>
                     <li className='nav-item'>
-                        <a href = 'experiences' >Experiences</a>
+                        <a href = '#experiences' >Experiences</a>
                     </li>
                     <li className='nav-item'>
                         <a href = '#projects' onClick={{closeMenu}}>Projects</a>
