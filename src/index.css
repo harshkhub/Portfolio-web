@@ -54,10 +54,3 @@ a {
   border: 1px solid var(--primary-dark);
 }
 
-.line {
-  display: block;
-  width: 40px;
-  height: 3px;
-  margin: 5px auto;
-  background-color: black;
-}
