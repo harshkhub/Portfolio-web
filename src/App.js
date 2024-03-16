@@ -2,8 +2,10 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import About from './components/About';
+import Project from './components/Project';
 import Experiences from './components/Experiences';
-import Projects from './components/Projects';
+import Projects from './components/Workcard';
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -11,7 +13,7 @@ function App() {
       <Navbar />
       <About />
       <Experiences />
-      <Projects/>
+  
     </div>
   );
 }
