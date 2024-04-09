@@ -1,7 +1,7 @@
 
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css'
-import {FaJava, FaAws, FaOffice, FaDocker, FaGraduationCap} from 'react-icons/fa'
+import {FaJava, FaAws, FaOffice, FaDocker, FaGraduationCap, FaSuitcase} from 'react-icons/fa'
 import Practo from './images/Practo.png'
 import ASM from './images/ASM.png'
 import Powerweave from './images/powerweave.jpg'
@@ -19,7 +19,7 @@ const Experiences = () => {
           className="vertical-timeline-element--work"
           date="January 2024-Present"
           iconStyle={{ background: 'black', color: '#fff' }}
-          icon={<FaAws/>}
+          icon={<FaSuitcase/>}
           >
             <img src={ASM}alt="Company"/>
             <h3>ASML</h3>
@@ -31,7 +31,7 @@ const Experiences = () => {
         className="vertical-timeline-element--work"
         date="June 2023-August 2023"
         iconStyle={{ background: 'black', color: '#fff' }}
-        icon={<FaGraduationCap />}
+        icon={<FaSuitcase />}
         >
           <img src={ASM}alt="Company"/>
           <h3>ASML</h3>
@@ -43,8 +43,8 @@ const Experiences = () => {
         <VerticalTimelineElement
         className="vertical-timeline-element--work"
         date="May 2022-July 2022"
-        iconStyle={{ background: 'red', color: '#fff' }}
-        icon={<FaJava />}
+        iconStyle={{ background: 'black', color: '#fff' }}
+        icon={<FaSuitcase />}
         >
           <img src={Powerweave} alt='Poweraeve'/>
           <h3>Powerweave</h3>
@@ -55,8 +55,8 @@ const Experiences = () => {
         <VerticalTimelineElement
         className="vertical-timeline-element--work"
         date="2011 - present"
-        iconStyle={{ background: 'red', color: '#fff' }}
-        icon={<FaJava />}
+        iconStyle={{ background: 'black', color: '#fff' }}
+        icon={<FaSuitcase />}
         >
           <img src={Practo} alt='Practo'/>
           <h3>Practo</h3>
