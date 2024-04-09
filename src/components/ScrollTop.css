@@ -1,0 +1,31 @@
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: background-color 0.3s, bottom 0.3s, opacity 0.3s;
+  }
+  
+  .scroll-top:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  .scroll-top:active {
+    background-color:black;
+  }
+  
+  .scroll-top.hidden {
+    bottom: -50px;
+    opacity: 0;
+  }
+  

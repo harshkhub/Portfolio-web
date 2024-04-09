@@ -1,9 +1,10 @@
 import Workcard from "./Workcard"
+import Work from "./Work"
 const Project = () =>{
 
     return(
-        <div className="project-container" id="project">
-        <Workcard />
+        <div id="projects">
+        <Work />
         </div>
     )
 }

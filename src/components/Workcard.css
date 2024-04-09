@@ -1,22 +1,27 @@
-.project-heading{
-    text-align: center;
-    padding: 4rem 0 2rem 0;
+.work-container{
+    max-width: 100%;
+    background: lightskyblue;
 }
 
 .project-container{
-    max-width: 1140px;
+    max-width: 100%;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 40px;
     padding-bottom: 5rem;
-}
-
-.project-card{
-    background: lightskyblue;
     padding: 1.2rem 1rem;
 }
 
+.project-heading{
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.project-card{
+    background: white;
+    padding: 1.2rem 1rem;
+}
 .project-card img{
     width: 100%;
 }
@@ -29,6 +34,7 @@
 }
 
 .project-title{
+    text-align: center;
     padding: 1rem 0;
 }
 
