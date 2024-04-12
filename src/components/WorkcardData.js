@@ -1,5 +1,6 @@
 import ASM from './images/ASM.png'
 import course from './images/course.png'
+import predictor from './images/predictor.png'
 import test1 from './images/test1.mov'
 
 const ProjectCardData = [
@@ -11,12 +12,12 @@ const ProjectCardData = [
         source: "https://github.com/harshkhub/Course-scheduler-Fullstack"
 
     },
-/*  {
-        imgsrc: ASM,
-        title: "ASML concept management tool",
-        text: "Project description",
-        view: "https://asm-frontend.s3-website.us-east-2.amazonaws.com/",
-        source: "https://github.com/harshkhub/Course-scheduler-Fullstack"
-    },*/
+  {
+        imgsrc: predictor,
+        title: "NASDAQ stock predictor",
+        text: "Developed a NASDAQ stock predictor using machine learning algorithms, including linear regression, random forest, and gradient boosting. The predictor uses historical stock data to forecast future stock prices, enabling users to make informed investment decisions. The project leverages Python libraries such as NumPy, Pandas, and Scikit-learn for data analysis and model training.  ",
+        view: "https://github.com/harshkhub/Stock-market-predictor/tree/main",
+        source: "https://github.com/harshkhub/Stock-market-predictor/tree/main"
+    },
 ];
 export default ProjectCardData
