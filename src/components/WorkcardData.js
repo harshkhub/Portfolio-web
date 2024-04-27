@@ -2,6 +2,7 @@ import ASM from './images/ASM.png'
 import course from './images/course.png'
 import predictor from './images/predictor.png'
 import test1 from './images/test1.mov'
+import trade1 from './images/trade1.jpg'
 
 const ProjectCardData = [
     {
@@ -18,6 +19,13 @@ const ProjectCardData = [
         text: "Developed a NASDAQ stock predictor using machine learning algorithms, including linear regression, random forest, and gradient boosting. The predictor uses historical stock data to forecast future stock prices, enabling users to make informed investment decisions. The project leverages Python libraries such as NumPy, Pandas, and Scikit-learn for data analysis and model training.  ",
         view: "https://github.com/harshkhub/Stock-market-predictor/tree/main",
         source: "https://github.com/harshkhub/Stock-market-predictor/tree/main"
+    },
+    {
+        imgsrc: trade1,
+        title: "JoeStocks Trading",
+        text: "This Stock Trading Platform is a full-stack web application allowing users to authenticate, purchase stocks, sell them, and view their portfolio. It pulls live stock data from the Finnhub API and utilizes Java Servlets for backend operations, with a simple front-end built with HTML, CSS, and JavaScript. User data is managed in an SQL database.",
+        view: "https://github.com/harshkhub/JoesStocks_Trader/tree/main",
+        source: "https://github.com/harshkhub/JoesStocks_Trader/tree/main"
     },
 ];
 export default ProjectCardData
