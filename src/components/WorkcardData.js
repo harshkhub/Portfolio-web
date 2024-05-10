@@ -13,7 +13,7 @@ const ProjectCardData = [
     {
         imgsrc: postcard,
         title: "Postcard exchange",
-        text: "Developed the backend servlets and File object storage for a postcard exchange social platform. Enables users to create, view, and exchange postcards with other users. The project uses Java Servlets for backend operations and a simple front-end built React. Leverages multi-threading through a websocket connection to view recent activities on the home page.",
+        text: "Developed the backend servlets and File object storage for a postcard exchange social platform. Enables users to create, view, and exchange postcards with other users. The project uses Java Servlets for backend operations and a simple front-end built with React. Leverages multi-threading through a websocket connection to view recent activities on the home page.",
         view: "https://postexchange.icytools.cn/",
         source: "https://github.com/CSCI201-SPR24-Group24",
         privateCode: false
