@@ -17,7 +17,7 @@ const Experiences = () => {
       <VerticalTimeline lineColor='black'>
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
-          date="January 2024-Present"
+          date="Jan 2024-Present"
           iconStyle={{ background: 'black', color: '#fff' }}
           icon={<FaSuitcase/>}
           >
@@ -29,7 +29,7 @@ const Experiences = () => {
           </VerticalTimelineElement>
           <VerticalTimelineElement
         className="vertical-timeline-element--work"
-        date="June 2023-August 2023"
+        date="June 2023-Aug 2023"
         iconStyle={{ background: 'black', color: '#fff' }}
         icon={<FaSuitcase />}
         >
@@ -42,7 +42,7 @@ const Experiences = () => {
 
         <VerticalTimelineElement
         className="vertical-timeline-element--work"
-        date="May 2022-July 2022"
+        date="May 2022- Jul 2022"
         iconStyle={{ background: 'black', color: '#fff' }}
         icon={<FaSuitcase />}
         >
@@ -54,7 +54,7 @@ const Experiences = () => {
 
         <VerticalTimelineElement
         className="vertical-timeline-element--work"
-        date="2011 - present"
+        date="Feb 2022 - Apr 2022"
         iconStyle={{ background: 'black', color: '#fff' }}
         icon={<FaSuitcase />}
         >
