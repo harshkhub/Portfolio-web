@@ -95,11 +95,15 @@
 
     .about .container {
         width: 100%;
+        size: 10px;
     }
 
     .about .container img {
         padding: 0rem;
-        width: 90vw;
+        width: 200px;
+        justify-content: center;
+        align-items: center;
+        display: none;
     }
 
     .about .container .col-2 {
