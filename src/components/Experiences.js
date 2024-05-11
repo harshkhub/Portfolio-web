@@ -7,6 +7,7 @@ import ASM from './images/ASM.png'
 import Powerweave from './images/powerweave.jpg'
 import download from './images/download.png'
 import './Experiences.css'
+import cs from './images/cs.png'
 
 const Experiences = () => {
 
@@ -26,6 +27,17 @@ const Experiences = () => {
             <h2>Software engineer Contract Intern | Remote</h2>
             <p>Engineering a web tool for project management that uses microservices and RESTful API principles,  hosted on AWS RDS</p>
             <FaDocker/><FaAws/>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+          className="vertical-timeline-element--work"
+          date="May 2024-Present"
+          iconStyle={{ background: 'black', color: '#fff' }}
+          icon={<FaSuitcase/>}
+          >
+            <img src={cs}alt="Company"/>
+            <h3>CS@SC summer camps</h3>
+            <h2>Teaching assistant for Python | USC</h2>
+            <p>Teaching assistant for USC Computer Science coding camps for K-12 students interested in learning the fundamentals of Python</p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
         className="vertical-timeline-element--work"
