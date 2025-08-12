@@ -4,6 +4,7 @@ import 'react-vertical-timeline-component/style.min.css'
 import {FaJava, FaAws, FaOffice, FaDocker, FaGraduationCap, FaSuitcase} from 'react-icons/fa'
 import Practo from './images/Practo.png'
 import ASM from './images/ASM.png'
+import meta from './images/metanew.png'
 import Powerweave from './images/powerweave.jpg'
 import download from './images/download.png'
 import './Experiences.css'
@@ -16,9 +17,20 @@ const Experiences = () => {
       <h1>Experiences</h1>
       
       <VerticalTimeline lineColor='black'>
+      <VerticalTimelineElement
+          className="vertical-timeline-element--work"
+          date="May 2025 - Aug 2025"
+          iconStyle={{ background: 'black', color: '#fff' }}
+          icon={<FaSuitcase/>}
+          >
+            <img src={meta}alt="Company" style={{ width: "500px", height: "auto" }} />
+            <h3>Meta</h3>
+            <h2>Software engineer Intern | NYC, NY</h2>
+            <p>Built an internal debugging tool for the Meta AI app’s login flow (Kotlin, Swift, PHP), with logging and dashboard capabilities to surface diagnostic data. Partnered with cross-functional teams to scale adoption and enhance data coverage</p>
+          </VerticalTimelineElement>
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
-          date="Jan 2024-Present"
+          date="Jan 2024 - Aug 2024"
           iconStyle={{ background: 'black', color: '#fff' }}
           icon={<FaSuitcase/>}
           >

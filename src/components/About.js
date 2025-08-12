@@ -13,10 +13,15 @@ const About = () => {
                     <h2>HARSH KHUBCHANDANI</h2>
                     <span className='line'></span>
                     
-                    <p>Hello! I am currently studying Computer science and Business administration with a minor
-                    in Artifical Intelligence applications at the University of Southern California. I am interested in the intersection
-                    between Computer-vision and autonomous vehicles. Additionally, I am also in the process of learning Springboot!</p>
-                    <p>Click the button below to view a pdf of my resume!</p>
+                    <p>
+                        Prev SWE Intern @ Meta, ASML, Practo
+                        <br />
+                        <br />
+                        BA CS Student @ USC
+                        <br />
+                        <br />
+                        Fitness Enthusiast | Marathon runner | House music 
+                    </p>
                     <a href= {Resume} className='button'target='_blank' >RESUME</a>
                     <p>Relevant links:</p>
                 <ul className='socialLinks'>
