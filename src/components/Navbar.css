@@ -6,6 +6,7 @@
     z-index: 100;
     transition: all 0.3s ease;
     background: transparent;
+    padding-top: env(safe-area-inset-top, 0);
 }
 
 .header.scrolled {
@@ -88,7 +89,7 @@
 
     .nav-menu {
         position: fixed;
-        top: 68px;
+        top: calc(68px + env(safe-area-inset-top, 0));
         left: 0;
         right: 0;
         flex-direction: column;
