@@ -1,52 +1,80 @@
 import React from 'react'
 import john from './images/Profile.JPG'
-import './About.css'
 import Resume from './images/Resume.pdf'
-import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { faArrowRight, faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import './About.css'
+
 const About = () => {
     return (
-        <div className='about' id='about'>
-            <div className='container'>
-                <img src={john} className= 'image-left' alt='john' />
-                <div className='col-2'>
-                    <h2>HARSH KHUBCHANDANI</h2>
-                    <span className='line'></span>
-                    
-                    <p>
-                        Prev SWE Intern @ Meta, ASML, Practo
-                        <br />
-                        <br />
-                        BA CS Student @ USC
-                        <br />
-                        <br />
-                        Fitness Enthusiast | Marathon runner | House music 
+        <section className="hero section" id="about">
+            <div className="container hero-container">
+                <div className="hero-content">
+                    <div className="status-pill">
+                        <span className="status-dot" />
+                        <span>Currently building at Meta — Reality Labs Wearables</span>
+                    </div>
+
+                    <h1 className="hero-title">
+                        Hi, I'm <span className="gradient-text">Harsh Khubchandani</span>.
+                    </h1>
+
+                    <p className="hero-tagline">
+                        Software Engineer crafting privacy &amp; identity systems for
+                        smart glasses at Meta. Previously interned at Meta, ASML, and Practo.
                     </p>
-                    <a href= {Resume} className='button'target='_blank' >RESUME</a>
-                    <p>Relevant links:</p>
-                <ul className='socialLinks'>
-                    <li>
-                        <a
-                        target="_blank"
-                        rel = "nonreferrer"
-                        href='https://www.linkedin.com/in/harsh-khubchandani-19207b238/'
-                        >
-                        <FontAwesomeIcon icon = {faLinkedinIn}/>
+
+                    <div className="hero-meta">
+                        <span className="meta-item">
+                            <FontAwesomeIcon icon={faLocationDot} /> New York, NY
+                        </span>
+                        <span className="meta-item">
+                            <FontAwesomeIcon icon={faEnvelope} /> Open to chat
+                        </span>
+                    </div>
+
+                    <div className="hero-cta">
+                        <a href={Resume} className="button" target="_blank" rel="noreferrer">
+                            View Resume <FontAwesomeIcon icon={faArrowRight} />
                         </a>
-                    </li>
-                    <li>
-                        <a
-                        target="_blank"
-                        rel = "nonreferrers"
-                        href='https://github.com/harshkhub'
-                        >
-                        <FontAwesomeIcon icon = {faGithub} />
+                        <a href="#experience" className="button secondary">
+                            Explore my work
                         </a>
-                    </li>
-                </ul>
+                    </div>
+
+                    <ul className="socialLinks">
+                        <li>
+                            <a
+                                target="_blank"
+                                rel="noreferrer"
+                                href="https://www.linkedin.com/in/harsh-khubchandani-19207b238/"
+                                aria-label="LinkedIn"
+                            >
+                                <FontAwesomeIcon icon={faLinkedin} />
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                target="_blank"
+                                rel="noreferrer"
+                                href="https://github.com/harshkhub"
+                                aria-label="GitHub"
+                            >
+                                <FontAwesomeIcon icon={faGithub} />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div className="hero-image-wrap">
+                    <div className="hero-image-frame">
+                        <img src={john} alt="Harsh Khubchandani" />
+                    </div>
+                    <div className="hero-image-glow" />
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

@@ -1,98 +1,156 @@
-
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css'
-import {FaJava, FaAws, FaOffice, FaDocker, FaGraduationCap, FaSuitcase} from 'react-icons/fa'
+import React from 'react'
 import Practo from './images/Practo.png'
 import ASM from './images/ASM.png'
 import meta from './images/metanew.png'
 import Powerweave from './images/powerweave.jpg'
-import download from './images/download.png'
-import './Experiences.css'
 import cs from './images/cs.png'
+import './Experiences.css'
+
+const experiences = [
+    {
+        company: 'Meta',
+        logo: meta,
+        role: 'Software Engineer · Reality Labs Wearables',
+        location: 'New York, NY',
+        date: 'Jan 2025 — Present',
+        current: true,
+        highlight: true,
+        tags: ['Kotlin', 'Swift', 'C++', 'AOSP', 'Android', 'iOS'],
+        bullets: [
+            'Shipped 5 complete privacy & identity features across AOSP, Android, and iOS for in-market smart glasses — spanning UX through server-side in Kotlin, Swift, and C++.',
+            'Improved account sync success rate by 2–3% by diagnosing and resolving cache errors in device record sync; collaborated with XFN connectivity and onboarding teams to trace and fix root cause.',
+            'Built and shipped a silent push notification system for wearables subscription updates, achieving 100% server dispatch success across 543 pushes.',
+            'Added account sync support for new device onboarding to the Meta AI app, enabling seamless identity continuity across the glasses ecosystem.',
+            'Drove team test coverage from 61.85% → 72.83% by building automations and plugins that auto-generate unit tests across the codebase.',
+            'Boosted team AI productivity by creating context files, skills, and plugins that improved code readability for AI tooling and raised AI self-verify scores.',
+        ],
+    },
+    {
+        company: 'Meta',
+        logo: meta,
+        role: 'Software Engineer Intern',
+        location: 'New York, NY',
+        date: 'May 2025 — Aug 2025',
+        tags: ['Kotlin', 'Swift', 'PHP'],
+        bullets: [
+            'Built an internal debugging tool for the Meta AI app login flow (Kotlin, Swift, PHP), with logging and dashboard capabilities to surface diagnostic data.',
+            'Partnered with cross-functional teams to scale adoption and enhance data coverage.',
+        ],
+    },
+    {
+        company: 'ASML',
+        logo: ASM,
+        role: 'Software Engineer Contract Intern',
+        location: 'Remote',
+        date: 'Jan 2024 — Aug 2024',
+        tags: ['AWS', 'Docker', 'Microservices', 'REST'],
+        bullets: [
+            'Engineered a web tool for project management using microservices and RESTful API principles, hosted on AWS RDS.',
+        ],
+    },
+    {
+        company: 'CS@SC Summer Camps',
+        logo: cs,
+        role: 'Teaching Assistant · Python',
+        location: 'USC',
+        date: 'May 2024 — Present',
+        tags: ['Python', 'Teaching'],
+        bullets: [
+            'Teaching assistant for USC Computer Science coding camps for K-12 students learning the fundamentals of Python.',
+        ],
+    },
+    {
+        company: 'ASML',
+        logo: ASM,
+        role: 'Machine Learning Intern',
+        location: 'San Diego, CA',
+        date: 'Jun 2023 — Aug 2023',
+        tags: ['TensorFlow', 'Python', 'Computer Vision'],
+        bullets: [
+            'Led a team of 5 interns to improve efficiency of the tin droplet scanner and cameras by 5%.',
+            'Analyzed data using TensorFlow for better detection, simulated system upgrades, and collaborated on Python code for lithography systems.',
+        ],
+    },
+    {
+        company: 'Powerweave',
+        logo: Powerweave,
+        role: 'Software Engineering Intern',
+        location: 'Mumbai, India',
+        date: 'May 2022 — Jul 2022',
+        tags: ['PyTorch', 'RNN', 'REST'],
+        bullets: [
+            'Developed and managed EWIZcommerce, a B2B e-commerce platform with marketing automation and RESTful APIs.',
+            'Applied PyTorch time series RNNs to predict future traffic and used Apriori to improve returning purchases; addressed high-priority bugs in the EWIZ platform.',
+        ],
+    },
+    {
+        company: 'Practo',
+        logo: Practo,
+        role: 'Software Engineer Intern',
+        location: 'Mumbai, India',
+        date: 'Feb 2022 — Apr 2022',
+        tags: ['React', 'PostgreSQL', 'Mocha'],
+        bullets: [
+            'Built a React web tool for doctor consultations and location-based search on the Practo search team.',
+            'Optimized SQL queries for a 15% execution-time reduction and implemented parallel MOCHA test scripts to cut test time by 12%.',
+        ],
+    },
+]
 
 const Experiences = () => {
+    return (
+        <section className="experience section" id="experience">
+            <div className="container">
+                <span className="section-label">Experience</span>
+                <h2 className="section-title">Where I've shipped.</h2>
+                <p className="section-subtitle">
+                    From smart glasses at Meta to lithography ML at ASML — a track record of
+                    shipping production systems across the stack.
+                </p>
 
-    return(
-    <div className="experiences-container" id='experiences'>
-      <h1>Experiences</h1>
-      
-      <VerticalTimeline lineColor='black'>
-      <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          date="May 2025 - Aug 2025"
-          iconStyle={{ background: 'black', color: '#fff' }}
-          icon={<FaSuitcase/>}
-          >
-            <img src={meta}alt="Company" style={{ width: "500px", height: "auto" }} />
-            <h3>Meta</h3>
-            <h2>Software engineer Intern | NYC, NY</h2>
-            <p>Built an internal debugging tool for the Meta AI app’s login flow (Kotlin, Swift, PHP), with logging and dashboard capabilities to surface diagnostic data. Partnered with cross-functional teams to scale adoption and enhance data coverage</p>
-          </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          date="Jan 2024 - Aug 2024"
-          iconStyle={{ background: 'black', color: '#fff' }}
-          icon={<FaSuitcase/>}
-          >
-            <img src={ASM}alt="Company"/>
-            <h3>ASML</h3>
-            <h2>Software engineer Contract Intern | Remote</h2>
-            <p>Engineering a web tool for project management that uses microservices and RESTful API principles,  hosted on AWS RDS</p>
-            <FaDocker/><FaAws/>
-          </VerticalTimelineElement>
-          <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          date="May 2024-Present"
-          iconStyle={{ background: 'black', color: '#fff' }}
-          icon={<FaSuitcase/>}
-          >
-            <img src={cs}alt="Company"/>
-            <h3>CS@SC summer camps</h3>
-            <h2>Teaching assistant for Python | USC</h2>
-            <p>Teaching assistant for USC Computer Science coding camps for K-12 students interested in learning the fundamentals of Python</p>
-          </VerticalTimelineElement>
-          <VerticalTimelineElement
-        className="vertical-timeline-element--work"
-        date="June 2023-Aug 2023"
-        iconStyle={{ background: 'black', color: '#fff' }}
-        icon={<FaSuitcase />}
-        >
-          <img src={ASM}alt="Company"/>
-          <h3>ASML</h3>
-          <h2>Machine learning Intern | San Diego, CA</h2>
-          <p>Machine learning intern for tin droplet scanner team at ASML. Led a team of 5 interns to improve efficiency of Tin droplet scanner and cameras by 5%, analyzed data using TensorFlow for better detection, simulated system upgrades, collaborated on Python code for lithography systems, and conducted meetings to monitor camera performance.</p>
+                <div className="timeline">
+                    {experiences.map((exp, i) => (
+                        <article
+                            key={i}
+                            className={`exp-card ${exp.highlight ? 'highlight' : ''}`}
+                        >
+                            <div className="exp-card-header">
+                                <div className="exp-logo">
+                                    <img src={exp.logo} alt={exp.company} />
+                                </div>
+                                <div className="exp-heading">
+                                    <div className="exp-company-row">
+                                        <h3 className="exp-company">{exp.company}</h3>
+                                        {exp.current && <span className="exp-badge">Current</span>}
+                                    </div>
+                                    <p className="exp-role">{exp.role}</p>
+                                    <p className="exp-meta">
+                                        <span>{exp.location}</span>
+                                        <span className="exp-dot">·</span>
+                                        <span>{exp.date}</span>
+                                    </p>
+                                </div>
+                            </div>
 
-        </VerticalTimelineElement>
+                            <ul className="exp-bullets">
+                                {exp.bullets.map((b, j) => (
+                                    <li key={j}>{b}</li>
+                                ))}
+                            </ul>
 
-        <VerticalTimelineElement
-        className="vertical-timeline-element--work"
-        date="May 2022- Jul 2022"
-        iconStyle={{ background: 'black', color: '#fff' }}
-        icon={<FaSuitcase />}
-        >
-          <img src={Powerweave} alt='Poweraeve'/>
-          <h3>Powerweave</h3>
-          <h2>Software engineering Intern | Mumbai, India</h2>
-          <p>Developed and managed EWIZcommerce, a B2B e-commerce platform with marketing automation and RESTful APIs. Applied PyTorch for time series RNNs to predict future traffic, utilized Apriori algorithm for understanding and improving returning purchases, and played a key troubleshooting role to address high-priority bugs in the EWIZ platform using debugging tools.</p>
-        </VerticalTimelineElement>
-
-        <VerticalTimelineElement
-        className="vertical-timeline-element--work"
-        date="Feb 2022 - Apr 2022"
-        iconStyle={{ background: 'black', color: '#fff' }}
-        icon={<FaSuitcase />}
-        >
-          <img src={Practo} alt='Practo'/>
-          <h3>Practo</h3>
-          <h2>Software engineer Intern | Mumbai, India</h2>
-          <p>
-Developed a web tool using React for doctor consultations and location-based doctor search as a member of the Practo search teamn, utilized PostgreSQL for secure patient data storage in a healthcare platform, optimized SQL queries for a 15% reduction in execution time, aided in creating concise test cases for functional testing, and implemented parallel testing scripts with MOCHA to decrease testing time by 12%.</p>
-        </VerticalTimelineElement>
-
-    
-      </VerticalTimeline>
-    </div>
-  );
+                            {exp.tags && (
+                                <div className="exp-tags">
+                                    {exp.tags.map((t) => (
+                                        <span key={t} className="tag">{t}</span>
+                                    ))}
+                                </div>
+                            )}
+                        </article>
+                    ))}
+                </div>
+            </div>
+        </section>
+    )
 }
 
 export default Experiences

@@ -1,13 +1,6 @@
-import Workcard from "./Workcard"
-import Work from "./Work"
-const Project = () =>{
+import React from 'react'
+import Work from './Work'
 
-    return(
-        <div id="projects">
-        <Work />
-        </div>
-    )
-}
-
+const Project = () => <Work />
 
 export default Project

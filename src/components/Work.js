@@ -1,32 +1,36 @@
-import Workcard from "./Workcard"
-import WorkcardData from "./WorkcardData"
-import course from './images/course.png'
+import React from 'react'
+import WorkcardData from './WorkcardData'
+import Workcard from './Workcard'
 import './Workcard.css'
-import React from "react"
-import { NavLink } from "react-router-dom"
-
 
 const Work = () => {
-    return(
-    <div className='work-container'>
-            <h1 className='project-heading'>Projects</h1>
-        <div className='project-container'>
-            {WorkcardData.map((val,ind) => {
-                return(
-                    <Workcard
-                    key={ind}
-                    imgsrc = {val.imgsrc}
-                    title = {val.title}
-                    text = {val.text}
-                    view = {val.view}
-                    source = {val.source}
-                    privateCode = {val.privateCode}/>
-                )
-            })}
-        </div>
-    </div>
-    )
+    return (
+        <section className="work section" id="projects">
+            <div className="container">
+                <span className="section-label">Selected Work</span>
+                <h2 className="section-title">Projects.</h2>
+                <p className="section-subtitle">
+                    A mix of fullstack systems, ML experiments, and infra side-quests built
+                    during my studies and internships.
+                </p>
 
+                <div className="project-grid">
+                    {WorkcardData.map((val, ind) => (
+                        <Workcard
+                            key={ind}
+                            imgsrc={val.imgsrc}
+                            title={val.title}
+                            text={val.text}
+                            view={val.view}
+                            source={val.source}
+                            privateCode={val.privateCode}
+                            tags={val.tags}
+                        />
+                    ))}
+                </div>
+            </div>
+        </section>
+    )
 }
 
 export default Work

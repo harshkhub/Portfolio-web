@@ -1,35 +1,56 @@
-import { NavLink } from 'react-router-dom'
-import './Workcard.css'
-import WorkcardData from './WorkcardData'
-import { useRef, useEffect } from 'react'
-import { useState } from 'react'
 import React from 'react'
+import { faArrowUpRightFromSquare, faCode, faLock } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import './Workcard.css'
 
 const Workcard = (props) => {
+    return (
+        <article className="project-card">
+            <div className="project-image">
+                <img src={props.imgsrc} alt={props.title} />
+                <div className="project-image-overlay" />
+            </div>
 
-    console.log( "Logging private status: " +  props.privateCode);
+            <div className="project-body">
+                <h3 className="project-title">{props.title}</h3>
+                <p className="project-text">{props.text}</p>
 
+                {props.tags && (
+                    <div className="project-tags">
+                        {props.tags.map((t) => (
+                            <span key={t} className="tag">{t}</span>
+                        ))}
+                    </div>
+                )}
 
-
-    return(
-            <div className='project-card'>
-                <img src={props.imgsrc} alt='image'/>
-                <h2 className='project-title'>{props.title}</h2>
-                <div className='pro-details'>
-                    <p>	{props.text}</p>
+                <div className="project-actions">
                     {props.privateCode ? (
-                <p className="button" target="_blank" rel="noreferrer">
-                    Private code, please message me for viewing rights
-                </p>
-            ): 
-               ( <div className='buttons'><a className="button" target="_blank" rel = "nonreferrer" href={props.view}>
-                        View
-                        </a>
-                <a className="button" target="_blank" rel = "nonreferrer" href={props.source}>
-                        Source
-                        </a> </div>)}
+                        <span className="project-link disabled">
+                            <FontAwesomeIcon icon={faLock} /> Private code
+                        </span>
+                    ) : (
+                        <>
+                            <a
+                                className="project-link"
+                                target="_blank"
+                                rel="noreferrer"
+                                href={props.view}
+                            >
+                                <FontAwesomeIcon icon={faArrowUpRightFromSquare} /> Live
+                            </a>
+                            <a
+                                className="project-link"
+                                target="_blank"
+                                rel="noreferrer"
+                                href={props.source}
+                            >
+                                <FontAwesomeIcon icon={faCode} /> Source
+                            </a>
+                        </>
+                    )}
                 </div>
             </div>
+        </article>
     )
 }
 

@@ -1,31 +1,35 @@
 .scroll-top {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 99;
-    border: none;
-    outline: none;
-    background-color: black;
-    color: white;
+    right: 28px;
+    bottom: 28px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--border-strong);
+    background: rgba(20, 20, 20, 0.85);
+    backdrop-filter: blur(14px);
+    color: var(--text);
+    font-size: 0.95rem;
     cursor: pointer;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-size: 16px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    transition: background-color 0.3s, bottom 0.3s, opacity 0.3s;
-  }
-  
-  .scroll-top:hover {
-    background-color: white;
-    color: black;
-  }
-  
-  .scroll-top:active {
-    background-color:black;
-  }
-  
-  .scroll-top.hidden {
-    bottom: -50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     opacity: 0;
-  }
-  
+    transform: translateY(20px);
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 90;
+}
+
+.scroll-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.scroll-top:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--text);
+    transform: translateY(-2px);
+}
