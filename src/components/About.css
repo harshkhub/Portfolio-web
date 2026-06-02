@@ -68,6 +68,22 @@
     line-height: 1.6;
 }
 
+.hero-personal {
+    position: relative;
+    font-size: 0.98rem;
+    color: var(--text-dim);
+    max-width: 560px;
+    line-height: 1.65;
+    padding-left: 16px;
+    border-left: 2px solid var(--accent);
+}
+
+.hero-personal-label {
+    color: var(--text);
+    font-weight: 600;
+    letter-spacing: -0.005em;
+}
+
 .hero-meta {
     display: flex;
     flex-wrap: wrap;

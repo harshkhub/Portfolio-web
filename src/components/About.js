@@ -25,6 +25,13 @@ const About = () => {
                         smart glasses at Meta. Previously interned at Meta, ASML, and Practo.
                     </p>
 
+                    <p className="hero-personal">
+                        <span className="hero-personal-label">Off the clock —</span>{' '}
+                        lifting heavy, chasing miles on long runs, and any game that
+                        gets me in the sun (pickleball, padel, spikeball). Powered by
+                        house music and the occasional rave.
+                    </p>
+
                     <div className="hero-meta">
                         <span className="meta-item">
                             <FontAwesomeIcon icon={faLocationDot} /> New York, NY
