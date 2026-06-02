@@ -2,3 +2,33 @@
   min-height: 100vh;
   position: relative;
 }
+
+main {
+  position: relative;
+}
+
+/* Section divider — thin route line across, with center diamond */
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+.section-divider span {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--ink-3);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}

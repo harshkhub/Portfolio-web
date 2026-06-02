@@ -1,111 +1,265 @@
-.work {
-    background: linear-gradient(180deg, transparent, rgba(99, 102, 241, 0.025), transparent);
+.menu-head {
+    margin-bottom: 48px;
+    max-width: 720px;
 }
 
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-    gap: 22px;
+.menu-head .eyebrow {
+    margin-bottom: 14px;
 }
 
-.project-card {
-    display: flex;
-    flex-direction: column;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-    transition: all 0.3s ease;
+.menu-head .display {
+    margin-bottom: 16px;
 }
 
-.project-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--border-strong);
-    box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.6);
-}
-
-.project-image {
+/* The "menu paper" — feels like a paper bill of fare */
+.menu-paper {
+    background: var(--paper);
+    border: 1.5px solid var(--ink);
+    padding: clamp(28px, 4vw, 56px) clamp(20px, 4vw, 56px);
+    box-shadow: 8px 8px 0 var(--paper-deep);
     position: relative;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-    background: var(--bg-elevated);
-    border-bottom: 1px solid var(--border);
 }
 
-.project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.project-card:hover .project-image img {
-    transform: scale(1.05);
-}
-
-.project-image-overlay {
+.menu-paper::before {
+    content: '';
     position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, transparent 50%, rgba(10, 10, 10, 0.5));
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    border: 1px solid var(--ink);
     pointer-events: none;
 }
 
-.project-body {
-    padding: 22px 24px 24px;
+.menu-paper-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-bottom: 18px;
+    border-bottom: 2px solid var(--ink);
+    margin-bottom: 32px;
+}
+
+.menu-paper-title {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 1.6rem;
+    letter-spacing: 0.15em;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+
+.menu-paper-sub {
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    color: var(--ink-3);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.menu-paper-sig {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--ink-3);
+    font-size: 1rem;
+}
+
+/* A section of the menu */
+.menu-section {
+    margin-bottom: 38px;
+}
+
+.menu-section:last-of-type {
+    margin-bottom: 8px;
+}
+
+.menu-section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.menu-section-title {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.18rem;
+    color: var(--ink);
+    flex-shrink: 0;
+    letter-spacing: 0;
+}
+
+.menu-section-rule {
+    flex: 1;
+    height: 1px;
+    background: var(--ink);
+}
+
+.menu-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    flex: 1;
+    gap: 22px;
 }
 
-.project-title {
-    font-size: 1.15rem;
+/* A dish */
+.dish {
+    padding: 0;
+}
+
+.dish-head {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.dish-title {
+    font-family: var(--serif);
     font-weight: 700;
-    color: var(--text);
-    letter-spacing: -0.01em;
+    font-size: 1.18rem;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-shrink: 0;
 }
 
-.project-text {
-    color: var(--text-muted);
-    font-size: 0.92rem;
-    line-height: 1.6;
+.dish-sold {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    color: var(--paper);
+    background: var(--ink);
+    padding: 2px 6px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    transform: translateY(-3px);
+}
+
+.dish-dots {
     flex: 1;
+    border-bottom: 2px dotted var(--ink-faint);
+    transform: translateY(-4px);
 }
 
-.project-tags {
+.dish-year {
+    font-family: var(--mono);
+    font-size: 0.86rem;
+    color: var(--ink-2);
+    font-weight: 500;
+    flex-shrink: 0;
+}
+
+.dish-desc {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--ink-2);
+    line-height: 1.55;
+    margin-bottom: 10px;
+    max-width: 760px;
+}
+
+.dish-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.dish-made {
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    color: var(--ink-3);
+    letter-spacing: 0.04em;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     gap: 6px;
-    margin-top: 4px;
 }
 
-.project-actions {
+.dish-made-label {
+    font-weight: 600;
+    color: var(--ink);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 0.66rem;
+    margin-right: 6px;
+}
+
+.dish-ingredient {
+    color: var(--ink-2);
+}
+
+.dish-sep {
+    color: var(--ink-faint);
+}
+
+.dish-links {
+    font-family: var(--mono);
+    font-size: 0.78rem;
     display: flex;
-    gap: 14px;
-    margin-top: 8px;
-    padding-top: 16px;
-    border-top: 1px solid var(--border);
+    gap: 8px;
+    align-items: center;
 }
 
-.project-link {
+.dish-links a {
+    color: var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 1px;
+    transition: color 0.15s ease, border-color 0.15s ease;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    font-size: 0.88rem;
-    font-weight: 500;
-    color: var(--text-muted);
-    transition: color 0.2s ease;
+    gap: 5px;
 }
 
-.project-link:hover {
-    color: var(--accent-hover);
+.dish-links a:hover {
+    color: var(--route-red);
+    border-bottom-color: var(--route-red);
 }
 
-.project-link.disabled {
-    color: var(--text-dim);
-    cursor: not-allowed;
+.dish-private {
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    color: var(--ink-3);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-style: italic;
 }
 
-.project-link svg {
-    font-size: 0.78rem;
+.menu-paper-footer {
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px solid var(--ink);
+    text-align: center;
+    font-family: var(--serif);
+    color: var(--ink-3);
+    font-size: 0.95rem;
+}
+
+.menu-paper-footer em {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+@media (max-width: 640px) {
+    .dish-head {
+        flex-wrap: wrap;
+    }
+
+    .dish-dots {
+        display: none;
+    }
+
+    .dish-title {
+        font-size: 1.08rem;
+    }
 }

@@ -20,20 +20,48 @@ const Navbar = () => {
         <header className={`header ${scrolled ? 'scrolled' : ''}`}>
             <nav className="navbar container">
                 <a href="#top" className="logo" onClick={closeMenu}>
-                    <span className="logo-mark">HK</span>
-                    <span className="logo-dot" />
+                    <span className="logo-monogram">HK</span>
+                    <span className="logo-meta">
+                        <span className="logo-line">Field guide</span>
+                        <span className="logo-sub">No. 06 · 2026</span>
+                    </span>
                 </a>
 
                 <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-                    <li className="nav-item"><a href="#about" onClick={closeMenu}>About</a></li>
-                    <li className="nav-item"><a href="#experience" onClick={closeMenu}>Experience</a></li>
-                    <li className="nav-item"><a href="#projects" onClick={closeMenu}>Projects</a></li>
-                    <li className="nav-item"><a href="#contact" onClick={closeMenu}>Contact</a></li>
+                    <li className="nav-item">
+                        <a href="#about" onClick={closeMenu}>
+                            <span className="nav-num">01</span> Cover
+                        </a>
+                    </li>
+                    <li className="nav-item">
+                        <a href="#experience" onClick={closeMenu}>
+                            <span className="nav-num">02</span> Route
+                        </a>
+                    </li>
+                    <li className="nav-item">
+                        <a href="#projects" onClick={closeMenu}>
+                            <span className="nav-num">03</span> Menu
+                        </a>
+                    </li>
+                    <li className="nav-item">
+                        <a href="#notes" onClick={closeMenu}>
+                            <span className="nav-num">04</span> Notes
+                        </a>
+                    </li>
+                    <li className="nav-item">
+                        <a href="#contact" onClick={closeMenu}>
+                            <span className="nav-num">05</span> Postcard
+                        </a>
+                    </li>
                 </ul>
 
-                <div className="hamburger" onClick={handleClick}>
+                <button
+                    className="hamburger"
+                    onClick={handleClick}
+                    aria-label="Toggle menu"
+                >
                     <FontAwesomeIcon icon={click ? faTimes : faBars} />
-                </div>
+                </button>
             </nav>
         </header>
     )

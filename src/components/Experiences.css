@@ -1,142 +1,199 @@
-.experience {
-    background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.015) 30%, transparent);
-}
-
-.timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
-    position: relative;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 36px;
-    top: 80px;
-    bottom: 80px;
-    width: 1px;
-    background: linear-gradient(180deg, transparent, var(--border-strong) 20%, var(--border-strong) 80%, transparent);
-}
-
-.exp-card {
-    position: relative;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 28px 32px;
-    transition: all 0.3s ease;
-}
-
-.exp-card:hover {
-    border-color: var(--border-strong);
-    background: var(--surface-hover);
-    transform: translateY(-2px);
-}
-
-.exp-card.highlight {
+.line {
     background:
-        linear-gradient(135deg, rgba(99, 102, 241, 0.06), rgba(139, 92, 246, 0.03)),
-        var(--surface);
-    border-color: rgba(99, 102, 241, 0.28);
-    box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.06), 0 20px 50px -20px rgba(99, 102, 241, 0.2);
+        linear-gradient(180deg, transparent, rgba(24, 22, 19, 0.025), transparent);
 }
 
-.exp-card.highlight::before {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    border-radius: var(--radius);
-    padding: 1px;
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.5), transparent 60%);
-    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
+.line-head {
+    margin-bottom: 56px;
+    max-width: 720px;
 }
 
-.exp-card-header {
-    display: flex;
-    gap: 18px;
-    align-items: flex-start;
+.line-head .eyebrow {
+    margin-bottom: 14px;
+}
+
+.line-head .display {
     margin-bottom: 18px;
 }
 
-.exp-logo {
+/* The route */
+.route {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.stop {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: 28px;
+    padding-bottom: 56px;
+    position: relative;
+}
+
+/* The rail / colored line column */
+.stop-rail {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 4px;
+}
+
+.stop-rail::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: -56px;
+    width: 6px;
+    transform: translateX(-50%);
+    border-radius: 0;
+}
+
+.stop-red .stop-rail::before { background: var(--route-red); }
+.stop-blue .stop-rail::before { background: var(--route-blue); }
+.stop-green .stop-rail::before { background: var(--route-green); }
+.stop-orange .stop-rail::before { background: var(--route-orange); }
+.stop-yellow .stop-rail::before { background: var(--route-yellow); }
+
+.stop:last-of-type .stop-rail::before {
+    bottom: 0;
+}
+
+/* The bullet — MTA-style colored disc with the letter/number */
+.bullet {
+    position: relative;
+    z-index: 2;
     width: 52px;
     height: 52px;
-    border-radius: 10px;
-    background: var(--bg-elevated);
-    border: 1px solid var(--border);
-    display: flex;
+    border-radius: 50%;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: #fff;
+    border: 3px solid var(--paper);
+    box-shadow: 0 0 0 1.5px var(--ink);
+    letter-spacing: -0.02em;
+}
+
+.stop-red .bullet { background: var(--route-red); }
+.stop-blue .bullet { background: var(--route-blue); }
+.stop-green .bullet { background: var(--route-green); }
+.stop-orange .bullet { background: var(--route-orange); color: var(--ink); }
+.stop-yellow .bullet { background: var(--route-yellow); color: var(--ink); }
+
+.bullet.terminal {
+    background: var(--ink);
+    color: var(--paper);
+    font-size: 1.2rem;
+}
+
+.you-are-here {
+    position: relative;
+    z-index: 2;
+    margin-top: 12px;
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    font-weight: 600;
+    color: var(--route-red);
+    letter-spacing: 0.18em;
+    text-align: center;
+    line-height: 1.3;
+    background: var(--paper);
+    border: 1px dashed var(--route-red);
+    padding: 4px 6px;
+    text-transform: uppercase;
+}
+
+.yah-arrow {
+    display: inline-block;
+    transform: translateY(-1px);
+}
+
+/* The platform sign — like an actual NYC subway station sign */
+.stop-body {
+    padding-top: 0;
+}
+
+.stop-sign {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 14px 20px 16px;
+    margin-bottom: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 16px;
+    border-radius: 2px;
+    box-shadow: 4px 4px 0 var(--paper-shadow);
+}
+
+.stop-sign-main {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.stop-name {
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: -0.015em;
+    line-height: 1.05;
+}
+
+.stop-sub {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+}
+
+.stop-sign-meta {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--paper-deep);
+    letter-spacing: 0.14em;
+    text-align: right;
+    line-height: 1.25;
     flex-shrink: 0;
 }
 
-.exp-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    padding: 6px;
-}
-
-.exp-heading {
-    flex: 1;
-    min-width: 0;
-}
-
-.exp-company-row {
+.stop-role {
+    font-family: var(--serif);
+    font-size: 1.02rem;
+    color: var(--ink);
+    margin-bottom: 14px;
     display: flex;
-    align-items: center;
-    gap: 10px;
     flex-wrap: wrap;
-}
-
-.exp-company {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--text);
-}
-
-.exp-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 3px 10px;
-    border-radius: 999px;
-    background: rgba(34, 197, 94, 0.12);
-    border: 1px solid rgba(34, 197, 94, 0.32);
-    color: #4ade80;
-    font-size: 0.7rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-}
-
-.exp-role {
-    font-size: 0.98rem;
-    color: var(--text);
-    margin-top: 2px;
-    font-weight: 500;
-}
-
-.exp-meta {
-    display: flex;
-    align-items: center;
     gap: 8px;
-    font-size: 0.85rem;
-    color: var(--text-dim);
-    margin-top: 4px;
-    font-family: 'JetBrains Mono', monospace;
+    align-items: baseline;
 }
 
-.exp-dot {
-    opacity: 0.5;
+.stop-role-title {
+    font-weight: 600;
+    font-style: italic;
 }
 
-.exp-bullets {
+.stop-role-sep {
+    color: var(--ink-faint);
+}
+
+.stop-role-loc {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--ink-3);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.stop-notes {
     list-style: none;
     padding: 0;
     margin: 0 0 18px 0;
@@ -145,65 +202,113 @@
     gap: 10px;
 }
 
-.exp-bullets li {
+.stop-notes li {
     position: relative;
     padding-left: 22px;
-    color: var(--text-muted);
+    color: var(--ink-2);
     font-size: 0.96rem;
-    line-height: 1.6;
+    line-height: 1.55;
 }
 
-.exp-bullets li::before {
-    content: '';
+.stop-notes li::before {
+    content: '→';
     position: absolute;
     left: 0;
-    top: 10px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--accent);
-    opacity: 0.6;
+    top: 0;
+    color: var(--ink);
+    font-weight: 700;
 }
 
-.exp-card.highlight .exp-bullets li::before {
-    background: var(--accent);
-    opacity: 1;
+.stop-transfers {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 12px;
+    border-top: 1px dashed var(--rule);
 }
 
-.exp-tags {
+.transfer-label {
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    font-weight: 600;
+    color: var(--ink-3);
+    letter-spacing: 0.18em;
+}
+
+.stop-transfers ul {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
+    padding: 0;
+    margin: 0;
 }
 
-.tag {
-    padding: 4px 10px;
-    border-radius: 6px;
-    background: var(--bg-elevated);
-    border: 1px solid var(--border);
-    color: var(--text-muted);
-    font-size: 0.75rem;
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 500;
+.stop-transfers li {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--ink-2);
+    padding: 3px 9px;
+    background: var(--paper);
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    letter-spacing: 0.04em;
 }
 
-.exp-card.highlight .tag {
-    background: rgba(99, 102, 241, 0.08);
-    border-color: rgba(99, 102, 241, 0.22);
-    color: var(--accent-hover);
+/* Terminal stop */
+.stop-terminal {
+    padding-bottom: 0;
 }
 
-@media (max-width: 640px) {
-    .exp-card {
-        padding: 22px 20px;
+.terminal-body {
+    display: flex;
+    align-items: center;
+    padding-top: 14px;
+}
+
+.terminal-text {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--ink-3);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+}
+
+/* Mobile */
+@media (max-width: 720px) {
+    .stop {
+        grid-template-columns: 64px 1fr;
+        gap: 16px;
     }
 
-    .exp-card-header {
-        gap: 14px;
+    .bullet {
+        width: 40px;
+        height: 40px;
+        font-size: 1.05rem;
+        border-width: 2px;
     }
 
-    .exp-logo {
-        width: 44px;
-        height: 44px;
+    .stop-rail::before {
+        width: 4px;
+    }
+
+    .stop-sign {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 12px 14px 14px;
+    }
+
+    .stop-name {
+        font-size: 1.2rem;
+    }
+
+    .stop-sign-meta {
+        text-align: left;
+    }
+
+    .you-are-here {
+        font-size: 0.58rem;
+        padding: 3px 4px;
     }
 }

@@ -14,8 +14,8 @@ function App() {
             <main>
                 <About />
                 <Experiences />
-                <Skills />
                 <Project />
+                <Skills />
             </main>
             <Footer />
             <ScrollTop />

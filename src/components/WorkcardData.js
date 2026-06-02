@@ -1,74 +1,88 @@
-import course from './images/course.png'
-import predictor from './images/predictor.png'
-import trade1 from './images/trade1.jpg'
-import postcard from './images/postcard.png'
-import neural from './images/neural.png'
-import port from './images/port.png'
-import twitter from './images/twitter.png'
-
 const ProjectCardData = [
     {
-        imgsrc: postcard,
-        title: 'Postcard Exchange',
-        text: 'Backend servlets and file-object storage for a postcard exchange social platform. Java Servlets + React, with multi-threaded WebSocket activity feeds.',
-        tags: ['Java', 'Servlets', 'React', 'WebSocket'],
-        view: 'https://postexchange.icytools.cn/',
-        source: 'https://github.com/CSCI201-SPR24-Group24',
-        privateCode: false,
+        section: 'Fullstack — Mains',
+        items: [
+            {
+                title: 'USC Course Scheduler',
+                description:
+                    'A calendar planner for college students with secure course-material access. Hosted on AWS — RDS for the database, S3 for resources, EC2 for compute.',
+                made: ['Spring Boot', 'React', 'PostgreSQL', 'AWS'],
+                year: '2024',
+                view: 'http://schedulerfrontend.s3-website.us-east-2.amazonaws.com/',
+                source: 'https://github.com/harshkhub/Course-scheduler-Fullstack',
+                privateCode: false,
+            },
+            {
+                title: 'Postcard Exchange',
+                description:
+                    'A social platform for trading digital postcards. Backend in Java Servlets with multi-threaded WebSocket activity feeds and file-object storage; React front.',
+                made: ['Java', 'Servlets', 'React', 'WebSocket'],
+                year: '2024',
+                view: 'https://postexchange.icytools.cn/',
+                source: 'https://github.com/CSCI201-SPR24-Group24',
+                privateCode: false,
+            },
+            {
+                title: 'JoeStocks Trading',
+                description:
+                    'Trade real stocks with virtual money. Auth, portfolio, and live Finnhub data — Java Servlets + SQL on the back, vanilla JS on the front.',
+                made: ['Java', 'SQL', 'Finnhub API'],
+                year: '2023',
+                view: 'https://github.com/harshkhub/JoesStocks_Trader/tree/main',
+                source: 'https://github.com/harshkhub/JoesStocks_Trader/tree/main',
+                privateCode: false,
+            },
+        ],
     },
     {
-        imgsrc: course,
-        title: 'USC Course Scheduler',
-        text: 'Fullstack calendar planner for college students — Spring Boot + React + PostgreSQL, deployed on AWS (RDS, S3, EC2).',
-        tags: ['Spring Boot', 'React', 'PostgreSQL', 'AWS'],
-        view: 'http://schedulerfrontend.s3-website.us-east-2.amazonaws.com/',
-        source: 'https://github.com/harshkhub/Course-scheduler-Fullstack',
-        privateCode: false,
+        section: 'ML & Data — From the lab',
+        items: [
+            {
+                title: 'NASDAQ Stock Predictor',
+                description:
+                    'Forecasts NASDAQ prices using linear regression, random forest, and gradient boosting. Built with NumPy, Pandas, and scikit-learn.',
+                made: ['Python', 'scikit-learn', 'ML'],
+                year: '2024',
+                view: 'https://github.com/harshkhub/Stock-market-predictor/tree/main',
+                source: 'https://github.com/harshkhub/Stock-market-predictor/tree/main',
+                privateCode: false,
+            },
+            {
+                title: 'Abalone Age Neural Net',
+                description:
+                    'Single-layer neural network predicting abalone age from physical attributes — trained on a labeled abalone dataset.',
+                made: ['Python', 'scikit-learn'],
+                year: '2024',
+                view: '#',
+                source: '#',
+                privateCode: true,
+            },
+        ],
     },
     {
-        imgsrc: predictor,
-        title: 'NASDAQ Stock Predictor',
-        text: 'Forecasts NASDAQ prices using linear regression, random forest, and gradient boosting. Built with NumPy, Pandas, and scikit-learn.',
-        tags: ['Python', 'scikit-learn', 'ML'],
-        view: 'https://github.com/harshkhub/Stock-market-predictor/tree/main',
-        source: 'https://github.com/harshkhub/Stock-market-predictor/tree/main',
-        privateCode: false,
-    },
-    {
-        imgsrc: trade1,
-        title: 'JoeStocks Trading',
-        text: 'Fullstack stock trading platform with auth, portfolio, and live Finnhub data — Java Servlets + SQL backend with vanilla JS frontend.',
-        tags: ['Java', 'SQL', 'Finnhub API'],
-        view: 'https://github.com/harshkhub/JoesStocks_Trader/tree/main',
-        source: 'https://github.com/harshkhub/JoesStocks_Trader/tree/main',
-        privateCode: false,
-    },
-    {
-        imgsrc: neural,
-        title: 'Abalone Age Neural Net',
-        text: 'Single-layer neural network in scikit-learn predicting abalone age from physical attributes — trained on labeled abalone dataset.',
-        tags: ['Python', 'scikit-learn'],
-        view: '#',
-        source: '#',
-        privateCode: true,
-    },
-    {
-        imgsrc: twitter,
-        title: 'Twitter Feed Clone (C++)',
-        text: 'OOP-driven Twitter feed clone in C++ with a custom data structure for tweets, follows, and timeline rendering.',
-        tags: ['C++', 'OOP'],
-        view: '#',
-        source: '#',
-        privateCode: true,
-    },
-    {
-        imgsrc: port,
-        title: 'Portfolio Website',
-        text: 'This very site — built with React, custom CSS, and a dark, minimal design system.',
-        tags: ['React', 'CSS'],
-        view: 'https://github.com/harshkhub/Portfolio-web',
-        source: 'https://github.com/harshkhub/Portfolio-web',
-        privateCode: false,
+        section: 'Systems — From the kitchen',
+        items: [
+            {
+                title: 'Twitter Feed Clone in C++',
+                description:
+                    'A microblog in C++. Custom data structure for tweets, follows, and timeline rendering. OOP done with care, for once.',
+                made: ['C++', 'OOP'],
+                year: '2023',
+                view: '#',
+                source: '#',
+                privateCode: true,
+            },
+            {
+                title: 'This Portfolio',
+                description:
+                    'A field guide to me — handwritten React with a custom design system, MTA-inspired typography, and a NYC map I drew in SVG by hand.',
+                made: ['React', 'CSS', 'SVG'],
+                year: '2026',
+                view: 'https://github.com/harshkhub/Portfolio-web',
+                source: 'https://github.com/harshkhub/Portfolio-web',
+                privateCode: false,
+            },
+        ],
     },
 ]
 

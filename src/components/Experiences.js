@@ -1,153 +1,184 @@
 import React from 'react'
-import Practo from './images/Practo.png'
-import ASM from './images/ASM.png'
-import meta from './images/metanew.png'
-import Powerweave from './images/powerweave.jpg'
-import cs from './images/cs.png'
 import './Experiences.css'
 
-const experiences = [
+const stops = [
     {
+        line: 'red',
+        bullet: '1',
         company: 'Meta',
-        logo: meta,
-        role: 'Software Engineer · Reality Labs Wearables',
+        sub: 'Reality Labs Wearables',
+        role: 'Software Engineer',
         location: 'New York, NY',
-        date: 'Jan 2025 — Present',
+        period: 'JAN 2025 — PRESENT',
         current: true,
-        highlight: true,
-        tags: ['Kotlin', 'Swift', 'C++', 'AOSP', 'Android', 'iOS'],
-        bullets: [
+        notes: [
             'Shipped 5 complete privacy & identity features across AOSP, Android, and iOS for in-market smart glasses — spanning UX through server-side in Kotlin, Swift, and C++.',
-            'Improved account sync success rate by 2–3% by diagnosing and resolving cache errors in device record sync; collaborated with XFN connectivity and onboarding teams to trace and fix root cause.',
-            'Built and shipped a silent push notification system for wearables subscription updates, achieving 100% server dispatch success across 543 pushes.',
+            'Improved account sync success by 2–3% by diagnosing cache errors in device record sync; partnered with XFN connectivity and onboarding to fix the root cause.',
+            'Built and shipped a silent push notification system for wearables subscription updates — 100% dispatch success across 543 pushes.',
             'Added account sync support for new device onboarding to the Meta AI app, enabling seamless identity continuity across the glasses ecosystem.',
-            'Drove team test coverage from 61.85% → 72.83% by building automations and plugins that auto-generate unit tests across the codebase.',
-            'Boosted team AI productivity by creating context files, skills, and plugins that improved code readability for AI tooling and raised AI self-verify scores.',
+            'Drove team test coverage from 61.85% → 72.83% with automations and plugins that auto-generate unit tests across the codebase.',
+            'Improved team AI productivity by authoring context files, skills, and plugins that boosted code readability for AI tooling and self-verify scores.',
         ],
+        transfers: ['Kotlin', 'Swift', 'C++', 'AOSP', 'Android', 'iOS'],
     },
     {
+        line: 'red',
+        bullet: '2',
         company: 'Meta',
-        logo: meta,
+        sub: 'Meta AI App',
         role: 'Software Engineer Intern',
         location: 'New York, NY',
-        date: 'May 2025 — Aug 2025',
-        tags: ['Kotlin', 'Swift', 'PHP'],
-        bullets: [
-            'Built an internal debugging tool for the Meta AI app login flow (Kotlin, Swift, PHP), with logging and dashboard capabilities to surface diagnostic data.',
-            'Partnered with cross-functional teams to scale adoption and enhance data coverage.',
+        period: 'MAY 2025 — AUG 2025',
+        notes: [
+            'Built an internal debugging tool for the Meta AI app login flow (Kotlin, Swift, PHP), with logging and a dashboard to surface diagnostic data.',
+            'Partnered cross-functionally to scale adoption and grow data coverage.',
         ],
+        transfers: ['Kotlin', 'Swift', 'PHP'],
     },
     {
+        line: 'blue',
+        bullet: 'A',
         company: 'ASML',
-        logo: ASM,
-        role: 'Software Engineer Contract Intern',
+        sub: 'Project management web tool',
+        role: 'Software Engineer · Contract Intern',
         location: 'Remote',
-        date: 'Jan 2024 — Aug 2024',
-        tags: ['AWS', 'Docker', 'Microservices', 'REST'],
-        bullets: [
-            'Engineered a web tool for project management using microservices and RESTful API principles, hosted on AWS RDS.',
+        period: 'JAN 2024 — AUG 2024',
+        notes: [
+            'Engineered a web tool for project management using microservices and RESTful API design, hosted on AWS RDS.',
         ],
+        transfers: ['AWS', 'Docker', 'Microservices', 'REST'],
     },
     {
+        line: 'green',
+        bullet: '6',
         company: 'CS@SC Summer Camps',
-        logo: cs,
+        sub: 'USC',
         role: 'Teaching Assistant · Python',
-        location: 'USC',
-        date: 'May 2024 — Present',
-        tags: ['Python', 'Teaching'],
-        bullets: [
-            'Teaching assistant for USC Computer Science coding camps for K-12 students learning the fundamentals of Python.',
+        location: 'Los Angeles, CA',
+        period: 'MAY 2024 — PRESENT',
+        notes: [
+            'TA for USC Computer Science coding camps for K-12 students learning the fundamentals of Python.',
         ],
+        transfers: ['Python', 'Teaching'],
     },
     {
+        line: 'blue',
+        bullet: 'A',
         company: 'ASML',
-        logo: ASM,
+        sub: 'Tin droplet scanner team',
         role: 'Machine Learning Intern',
         location: 'San Diego, CA',
-        date: 'Jun 2023 — Aug 2023',
-        tags: ['TensorFlow', 'Python', 'Computer Vision'],
-        bullets: [
-            'Led a team of 5 interns to improve efficiency of the tin droplet scanner and cameras by 5%.',
-            'Analyzed data using TensorFlow for better detection, simulated system upgrades, and collaborated on Python code for lithography systems.',
+        period: 'JUN 2023 — AUG 2023',
+        notes: [
+            'Led a team of 5 interns to improve tin droplet scanner and camera efficiency by 5%.',
+            'Analyzed data with TensorFlow for better detection; simulated upgrades and contributed Python code for lithography systems.',
         ],
+        transfers: ['TensorFlow', 'Python', 'Computer Vision'],
     },
     {
+        line: 'orange',
+        bullet: 'F',
         company: 'Powerweave',
-        logo: Powerweave,
+        sub: 'EWIZcommerce platform',
         role: 'Software Engineering Intern',
         location: 'Mumbai, India',
-        date: 'May 2022 — Jul 2022',
-        tags: ['PyTorch', 'RNN', 'REST'],
-        bullets: [
-            'Developed and managed EWIZcommerce, a B2B e-commerce platform with marketing automation and RESTful APIs.',
-            'Applied PyTorch time series RNNs to predict future traffic and used Apriori to improve returning purchases; addressed high-priority bugs in the EWIZ platform.',
+        period: 'MAY 2022 — JUL 2022',
+        notes: [
+            'Built and managed EWIZcommerce — a B2B e-commerce platform with marketing automation and RESTful APIs.',
+            'Applied PyTorch time-series RNNs to forecast traffic and used Apriori to improve returning purchases; resolved high-priority bugs in the EWIZ platform.',
         ],
+        transfers: ['PyTorch', 'RNN', 'REST'],
     },
     {
+        line: 'yellow',
+        bullet: 'N',
         company: 'Practo',
-        logo: Practo,
+        sub: 'Practo Search',
         role: 'Software Engineer Intern',
         location: 'Mumbai, India',
-        date: 'Feb 2022 — Apr 2022',
-        tags: ['React', 'PostgreSQL', 'Mocha'],
-        bullets: [
-            'Built a React web tool for doctor consultations and location-based search on the Practo search team.',
-            'Optimized SQL queries for a 15% execution-time reduction and implemented parallel MOCHA test scripts to cut test time by 12%.',
+        period: 'FEB 2022 — APR 2022',
+        notes: [
+            'Built a React tool for doctor consultations and location-based search on the Practo search team.',
+            'Optimized SQL queries for a 15% execution-time reduction and ran parallel MOCHA test scripts to cut test time by 12%.',
         ],
+        transfers: ['React', 'PostgreSQL', 'Mocha'],
     },
 ]
 
 const Experiences = () => {
     return (
-        <section className="experience section" id="experience">
+        <section className="line section" id="experience">
             <div className="container">
-                <span className="section-label">Experience</span>
-                <h2 className="section-title">Where I've shipped.</h2>
-                <p className="section-subtitle">
-                    From smart glasses at Meta to lithography ML at ASML — a track record of
-                    shipping production systems across the stack.
-                </p>
+                <div className="line-head">
+                    <span className="eyebrow">§ 02 — Route map</span>
+                    <h2 className="display">
+                        The <em>local line</em>, end to end.
+                    </h2>
+                    <p className="lede">
+                        Read this as a route map. Each stop is a place where I shipped
+                        something — most recent on top, oldest at the bottom. The colored
+                        bullets correspond to MTA conventions only as a wink.
+                    </p>
+                </div>
 
-                <div className="timeline">
-                    {experiences.map((exp, i) => (
-                        <article
-                            key={i}
-                            className={`exp-card ${exp.highlight ? 'highlight' : ''}`}
-                        >
-                            <div className="exp-card-header">
-                                <div className="exp-logo">
-                                    <img src={exp.logo} alt={exp.company} />
-                                </div>
-                                <div className="exp-heading">
-                                    <div className="exp-company-row">
-                                        <h3 className="exp-company">{exp.company}</h3>
-                                        {exp.current && <span className="exp-badge">Current</span>}
-                                    </div>
-                                    <p className="exp-role">{exp.role}</p>
-                                    <p className="exp-meta">
-                                        <span>{exp.location}</span>
-                                        <span className="exp-dot">·</span>
-                                        <span>{exp.date}</span>
-                                    </p>
-                                </div>
+                <ol className="route">
+                    {stops.map((stop, i) => (
+                        <li key={i} className={`stop stop-${stop.line} ${stop.current ? 'is-current' : ''}`}>
+                            <div className="stop-rail">
+                                <span className="bullet" aria-hidden>
+                                    {stop.bullet}
+                                </span>
+                                {stop.current && (
+                                    <span className="you-are-here">
+                                        <span className="yah-arrow">→</span> YOU ARE HERE
+                                    </span>
+                                )}
                             </div>
 
-                            <ul className="exp-bullets">
-                                {exp.bullets.map((b, j) => (
-                                    <li key={j}>{b}</li>
-                                ))}
-                            </ul>
+                            <div className="stop-body">
+                                <header className="stop-sign">
+                                    <div className="stop-sign-main">
+                                        <span className="stop-name">{stop.company}</span>
+                                        <span className="stop-sub">{stop.sub}</span>
+                                    </div>
+                                    <div className="stop-sign-meta">
+                                        <span>{stop.period}</span>
+                                    </div>
+                                </header>
 
-                            {exp.tags && (
-                                <div className="exp-tags">
-                                    {exp.tags.map((t) => (
-                                        <span key={t} className="tag">{t}</span>
+                                <p className="stop-role">
+                                    <span className="stop-role-title">{stop.role}</span>
+                                    <span className="stop-role-sep">·</span>
+                                    <span className="stop-role-loc">{stop.location}</span>
+                                </p>
+
+                                <ul className="stop-notes">
+                                    {stop.notes.map((n, j) => (
+                                        <li key={j}>{n}</li>
                                     ))}
+                                </ul>
+
+                                <div className="stop-transfers">
+                                    <span className="transfer-label">TRANSFER TO</span>
+                                    <ul>
+                                        {stop.transfers.map((t) => (
+                                            <li key={t}>{t}</li>
+                                        ))}
+                                    </ul>
                                 </div>
-                            )}
-                        </article>
+                            </div>
+                        </li>
                     ))}
-                </div>
+
+                    <li className="stop stop-terminal">
+                        <div className="stop-rail">
+                            <span className="bullet terminal" aria-hidden>◆</span>
+                        </div>
+                        <div className="stop-body terminal-body">
+                            <p className="terminal-text">END OF LINE · 2022</p>
+                        </div>
+                    </li>
+                </ol>
             </div>
         </section>
     )

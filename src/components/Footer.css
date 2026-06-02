@@ -1,73 +1,284 @@
-.footer {
-    background:
-        radial-gradient(600px circle at 20% 0%, rgba(99, 102, 241, 0.08), transparent 60%),
-        var(--bg);
-    border-top: 1px solid var(--border);
-    padding-bottom: 40px;
+.postcard-section {
+    padding-bottom: 48px;
 }
 
-.footer-cta {
-    text-align: center;
-    max-width: 680px;
-    margin: 0 auto 80px;
+.postcard-head {
+    margin-bottom: 40px;
+    max-width: 720px;
 }
 
-.footer-title {
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    margin-top: 8px;
-    margin-bottom: 16px;
+.postcard-head .eyebrow {
+    margin-bottom: 14px;
 }
 
-.footer-sub {
-    color: var(--text-muted);
-    font-size: 1.05rem;
-    margin-bottom: 28px;
+/* The postcard itself */
+.postcard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    background: var(--paper);
+    border: 1.5px solid var(--ink);
+    min-height: 420px;
+    box-shadow: 10px 10px 0 var(--paper-deep);
+    overflow: hidden;
+    position: relative;
 }
 
-.footer-cta-buttons {
+.postcard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1.5px;
+    background: var(--ink);
+    transform: translateX(-50%);
+}
+
+/* Left side — written note */
+.postcard-left {
+    padding: 36px 38px;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
+    flex-direction: column;
+    gap: 14px;
+    position: relative;
 }
 
-.footer-bottom {
+.postcard-left::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        repeating-linear-gradient(
+            180deg,
+            transparent 0,
+            transparent 27px,
+            rgba(24, 22, 19, 0.06) 27px,
+            rgba(24, 22, 19, 0.06) 28px
+        );
+    pointer-events: none;
+}
+
+.postcard-greeting,
+.postcard-body,
+.postcard-sign {
+    position: relative;
+    z-index: 1;
+}
+
+.postcard-greeting {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--ink);
+    margin-bottom: 6px;
+}
+
+.postcard-body {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--ink-2);
+    line-height: 1.65;
+    max-width: 100%;
+}
+
+.postcard-sign {
+    margin-top: auto;
+    padding-top: 16px;
+}
+
+.postcard-sign-mark {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: var(--ink);
+    border-bottom: 1.5px solid var(--ink);
+    padding: 0 4px 2px;
+}
+
+/* Right side — address & stamp */
+.postcard-right {
+    padding: 36px 38px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto 1fr;
+    gap: 16px 24px;
+    align-items: start;
+}
+
+.postcard-stamp {
+    grid-column: 2;
+    grid-row: 1;
+    width: 88px;
+    height: 110px;
+    border: 1.5px solid var(--ink);
+    background: var(--paper-deep);
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding-top: 28px;
-    border-top: 1px solid var(--border);
-    flex-wrap: wrap;
-    gap: 16px;
+    justify-content: center;
+    padding: 6px;
+    position: relative;
 }
 
-.footer-copy {
-    color: var(--text-dim);
-    font-size: 0.88rem;
-    font-family: 'JetBrains Mono', monospace;
+.postcard-stamp::before,
+.postcard-stamp::after {
+    content: '';
+    position: absolute;
+    background-image: radial-gradient(circle, var(--paper) 3px, transparent 3.5px);
+    background-size: 8px 8px;
 }
 
-.footer-links {
+.postcard-stamp::before {
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    height: 8px;
+}
+
+.postcard-stamp::after {
+    bottom: -4px;
+    left: -4px;
+    right: -4px;
+    height: 8px;
+}
+
+.postcard-stamp-inner {
+    width: 100%;
+    height: 100%;
+    border: 1px dashed var(--ink);
     display: flex;
-    gap: 8px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-family: var(--serif);
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 1.1rem;
+    letter-spacing: 0.04em;
 }
 
-.footer-links a {
+.postcard-stamp-num {
+    font-size: 0.75rem;
+    font-family: var(--mono);
+    letter-spacing: 0.12em;
+    color: var(--ink-2);
+}
+
+.postcard-postmark {
+    grid-column: 1;
+    grid-row: 1;
+    width: 130px;
+    height: 130px;
+    border: 1.5px solid var(--ink-3);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    color: var(--ink-3);
+    letter-spacing: 0.16em;
+    text-align: center;
+    transform: rotate(-7deg);
+    padding: 0 10px;
+}
+
+.postcard-postmark-date {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--ink-2);
+    letter-spacing: 0.04em;
+}
+
+.postcard-address {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-self: end;
+}
+
+.postcard-to {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--ink-3);
+    letter-spacing: 0.22em;
+    margin-bottom: 4px;
+}
+
+.postcard-address a {
+    font-family: var(--mono);
+    font-size: 0.84rem;
+    color: var(--ink);
+    border-bottom: 1px dashed var(--ink-faint);
+    padding-bottom: 2px;
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    width: 38px;
-    height: 38px;
-    border-radius: 8px;
-    border: 1px solid var(--border-strong);
-    color: var(--text-muted);
-    transition: all 0.2s ease;
+    gap: 8px;
+    transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-.footer-links a:hover {
-    color: var(--text);
-    border-color: var(--accent);
-    background: var(--surface);
+.postcard-address a:hover {
+    color: var(--route-red);
+    border-bottom-color: var(--route-red);
+}
+
+/* Colophon */
+.colophon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 56px;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--ink-3);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.colophon-sep {
+    color: var(--ink-faint);
+}
+
+@media (max-width: 760px) {
+    .postcard {
+        grid-template-columns: 1fr;
+    }
+
+    .postcard::before {
+        display: none;
+    }
+
+    .postcard-left {
+        border-bottom: 1.5px solid var(--ink);
+    }
+
+    .postcard-right {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+    }
+
+    .postcard-postmark,
+    .postcard-stamp {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .postcard-stamp {
+        justify-self: end;
+    }
 }

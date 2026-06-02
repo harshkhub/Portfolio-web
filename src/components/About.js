@@ -1,84 +1,96 @@
 import React from 'react'
-import john from './images/Profile.JPG'
 import Resume from './images/Resume.pdf'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { faArrowRight, faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import NYCMap from './NYCMap'
 import './About.css'
 
 const About = () => {
     return (
-        <section className="hero section" id="about">
-            <div className="container hero-container">
-                <div className="hero-content">
-                    <div className="status-pill">
-                        <span className="status-dot" />
-                        <span>Currently building at Meta — Reality Labs Wearables</span>
+        <section className="cover section" id="about">
+            <div className="container cover-container">
+                <div className="cover-meta">
+                    <div className="masthead">
+                        <span className="masthead-issue">VOL. 01 · ISSUE 06</span>
+                        <span className="masthead-date">JUNE · MMXXVI</span>
                     </div>
-
-                    <h1 className="hero-title">
-                        Hi, I'm <span className="gradient-text">Harsh Khubchandani</span>.
-                    </h1>
-
-                    <p className="hero-tagline">
-                        Software Engineer crafting privacy &amp; identity systems for
-                        smart glasses at Meta. Previously interned at Meta, ASML, and Practo.
-                    </p>
-
-                    <p className="hero-personal">
-                        <span className="hero-personal-label">Off the clock —</span>{' '}
-                        lifting heavy, chasing miles on long runs, and any game that
-                        gets me in the sun (pickleball, padel, spikeball). Powered by
-                        house music and the occasional rave.
-                    </p>
-
-                    <div className="hero-meta">
-                        <span className="meta-item">
-                            <FontAwesomeIcon icon={faLocationDot} /> New York, NY
-                        </span>
-                        <span className="meta-item">
-                            <FontAwesomeIcon icon={faEnvelope} /> Open to chat
-                        </span>
-                    </div>
-
-                    <div className="hero-cta">
-                        <a href={Resume} className="button" target="_blank" rel="noreferrer">
-                            View Resume <FontAwesomeIcon icon={faArrowRight} />
-                        </a>
-                        <a href="#experience" className="button secondary">
-                            Explore my work
-                        </a>
-                    </div>
-
-                    <ul className="socialLinks">
-                        <li>
-                            <a
-                                target="_blank"
-                                rel="noreferrer"
-                                href="https://www.linkedin.com/in/harsh-khubchandani-19207b238/"
-                                aria-label="LinkedIn"
-                            >
-                                <FontAwesomeIcon icon={faLinkedin} />
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                target="_blank"
-                                rel="noreferrer"
-                                href="https://github.com/harshkhub"
-                                aria-label="GitHub"
-                            >
-                                <FontAwesomeIcon icon={faGithub} />
-                            </a>
-                        </li>
-                    </ul>
+                    <div className="rule-thick" />
                 </div>
 
-                <div className="hero-image-wrap">
-                    <div className="hero-image-frame">
-                        <img src={john} alt="Harsh Khubchandani" />
+                <div className="cover-grid">
+                    <div className="cover-text">
+                        <p className="cover-pretitle">A FIELD GUIDE TO</p>
+                        <h1 className="cover-title">
+                            Harsh<br />
+                            <em>Khubchandani</em>
+                        </h1>
+                        <p className="cover-sub">
+                            Software engineer in New York. Currently shipping privacy &amp; identity
+                            for smart glasses at <span className="ul">Meta — Reality Labs</span>.
+                            Previously at <span className="ul">Meta</span>,{' '}
+                            <span className="ul">ASML</span>, and <span className="ul">Practo</span>.
+                        </p>
+
+                        <dl className="coords">
+                            <div>
+                                <dt>LATITUDE</dt>
+                                <dd>40°43′ N</dd>
+                            </div>
+                            <div>
+                                <dt>LONGITUDE</dt>
+                                <dd>74°00′ W</dd>
+                            </div>
+                            <div>
+                                <dt>ELEVATION</dt>
+                                <dd>33 FT</dd>
+                            </div>
+                            <div>
+                                <dt>STATUS</dt>
+                                <dd>HIRED · OPEN TO CHAT</dd>
+                            </div>
+                        </dl>
+
+                        <div className="cover-actions">
+                            <a href={Resume} className="btn" target="_blank" rel="noreferrer">
+                                Read the resume <FontAwesomeIcon icon={faArrowRight} />
+                            </a>
+                            <a href="#experience" className="btn ghost">
+                                Begin the tour
+                            </a>
+                        </div>
+
+                        <ul className="cover-social">
+                            <li>
+                                <a
+                                    href="https://www.linkedin.com/in/harsh-khubchandani-19207b238/"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    aria-label="LinkedIn"
+                                >
+                                    <FontAwesomeIcon icon={faLinkedin} /> <span>LinkedIn</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://github.com/harshkhub"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    aria-label="GitHub"
+                                >
+                                    <FontAwesomeIcon icon={faGithub} /> <span>GitHub</span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
-                    <div className="hero-image-glow" />
+
+                    <div className="cover-map">
+                        <NYCMap />
+                        <p className="map-caption">
+                            <em>Plate I.</em> An incomplete index of where the work,
+                            the runs, the games and the music happen — within the five boroughs.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>

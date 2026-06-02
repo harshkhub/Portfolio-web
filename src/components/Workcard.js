@@ -1,56 +1,49 @@
 import React from 'react'
 import { faArrowUpRightFromSquare, faCode, faLock } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import './Workcard.css'
 
 const Workcard = (props) => {
     return (
-        <article className="project-card">
-            <div className="project-image">
-                <img src={props.imgsrc} alt={props.title} />
-                <div className="project-image-overlay" />
+        <li className="dish">
+            <div className="dish-head">
+                <h4 className="dish-title">
+                    {props.title}
+                    {props.privateCode && <span className="dish-sold">sold out</span>}
+                </h4>
+                <span className="dish-dots" aria-hidden />
+                <span className="dish-year">{props.year}</span>
             </div>
 
-            <div className="project-body">
-                <h3 className="project-title">{props.title}</h3>
-                <p className="project-text">{props.text}</p>
+            <p className="dish-desc">{props.description}</p>
 
-                {props.tags && (
-                    <div className="project-tags">
-                        {props.tags.map((t) => (
-                            <span key={t} className="tag">{t}</span>
-                        ))}
-                    </div>
+            <div className="dish-foot">
+                <p className="dish-made">
+                    <span className="dish-made-label">Made with</span>
+                    {props.made.map((m, i) => (
+                        <React.Fragment key={m}>
+                            <span className="dish-ingredient">{m}</span>
+                            {i < props.made.length - 1 && <span className="dish-sep">·</span>}
+                        </React.Fragment>
+                    ))}
+                </p>
+
+                {!props.privateCode ? (
+                    <p className="dish-links">
+                        <a href={props.view} target="_blank" rel="noreferrer">
+                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} /> taste
+                        </a>
+                        <span className="dish-sep">·</span>
+                        <a href={props.source} target="_blank" rel="noreferrer">
+                            <FontAwesomeIcon icon={faCode} /> recipe
+                        </a>
+                    </p>
+                ) : (
+                    <p className="dish-private">
+                        <FontAwesomeIcon icon={faLock} /> private kitchen
+                    </p>
                 )}
-
-                <div className="project-actions">
-                    {props.privateCode ? (
-                        <span className="project-link disabled">
-                            <FontAwesomeIcon icon={faLock} /> Private code
-                        </span>
-                    ) : (
-                        <>
-                            <a
-                                className="project-link"
-                                target="_blank"
-                                rel="noreferrer"
-                                href={props.view}
-                            >
-                                <FontAwesomeIcon icon={faArrowUpRightFromSquare} /> Live
-                            </a>
-                            <a
-                                className="project-link"
-                                target="_blank"
-                                rel="noreferrer"
-                                href={props.source}
-                            >
-                                <FontAwesomeIcon icon={faCode} /> Source
-                            </a>
-                        </>
-                    )}
-                </div>
             </div>
-        </article>
+        </li>
     )
 }
 
