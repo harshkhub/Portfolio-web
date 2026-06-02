@@ -11,8 +11,8 @@ const notes = [
     {
         glyph: '↻',
         title: 'Running',
-        body: 'Long Sunday runs through Central Park or along the Hudson. Half-marathon trained; full is on the docket.',
-        meta: 'PACE · 7:45 / mi',
+        body: 'Long Sunday runs through Central Park or along the Hudson. One full marathon down — already plotting the next.',
+        meta: '26.2 · DONE',
     },
     {
         glyph: '◬',
