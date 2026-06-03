@@ -3,6 +3,7 @@ import './Experiences.css'
 
 const stops = [
     {
+        id: 'stop-meta-rl',
         line: 'red',
         bullet: '1',
         company: 'Meta',
@@ -22,6 +23,7 @@ const stops = [
         transfers: ['Kotlin', 'Swift', 'C++', 'AOSP', 'Android', 'iOS'],
     },
     {
+        id: 'stop-meta-intern',
         line: 'red',
         bullet: '2',
         company: 'Meta',
@@ -36,6 +38,7 @@ const stops = [
         transfers: ['Kotlin', 'Swift', 'PHP'],
     },
     {
+        id: 'stop-asml-contract',
         line: 'blue',
         bullet: 'A',
         company: 'ASML',
@@ -49,6 +52,7 @@ const stops = [
         transfers: ['AWS', 'Docker', 'Microservices', 'REST'],
     },
     {
+        id: 'stop-cssc',
         line: 'green',
         bullet: '6',
         company: 'CS@SC Summer Camps',
@@ -62,6 +66,7 @@ const stops = [
         transfers: ['Python', 'Teaching'],
     },
     {
+        id: 'stop-asml-ml',
         line: 'blue',
         bullet: 'A',
         company: 'ASML',
@@ -76,6 +81,7 @@ const stops = [
         transfers: ['TensorFlow', 'Python', 'Computer Vision'],
     },
     {
+        id: 'stop-powerweave',
         line: 'orange',
         bullet: 'F',
         company: 'Powerweave',
@@ -90,6 +96,7 @@ const stops = [
         transfers: ['PyTorch', 'RNN', 'REST'],
     },
     {
+        id: 'stop-practo',
         line: 'yellow',
         bullet: 'N',
         company: 'Practo',
@@ -123,7 +130,7 @@ const Experiences = () => {
 
                 <ol className="route">
                     {stops.map((stop, i) => (
-                        <li key={i} className={`stop stop-${stop.line} ${stop.current ? 'is-current' : ''}`}>
+                        <li key={i} id={stop.id} className={`stop stop-${stop.line} ${stop.current ? 'is-current' : ''}`}>
                             <div className="stop-rail">
                                 <span className="bullet" aria-hidden>
                                     {stop.bullet}

@@ -66,6 +66,13 @@
     text-underline-offset: 4px;
     font-weight: 600;
     color: var(--ink);
+    cursor: pointer;
+    transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.cover-sub a.ul:hover {
+    color: var(--route-red);
+    text-decoration-color: var(--ink);
 }
 
 .coords {

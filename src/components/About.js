@@ -27,9 +27,12 @@ const About = () => {
                         </h1>
                         <p className="cover-sub">
                             Software engineer in New York. Currently shipping privacy &amp; identity
-                            for smart glasses at <span className="ul">Meta — Reality Labs</span>.
-                            Previously at <span className="ul">Meta</span>,{' '}
-                            <span className="ul">ASML</span>, and <span className="ul">Practo</span>.
+                            for smart glasses at{' '}
+                            <a className="ul" href="#stop-meta-rl">Meta — Reality Labs</a>.
+                            Previously at{' '}
+                            <a className="ul" href="#stop-meta-intern">Meta</a>,{' '}
+                            <a className="ul" href="#stop-asml-contract">ASML</a>, and{' '}
+                            <a className="ul" href="#stop-practo">Practo</a>.
                         </p>
 
                         <dl className="coords">

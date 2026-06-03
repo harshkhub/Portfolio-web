@@ -104,13 +104,12 @@ const NYCMap = () => (
             <text x="304" y="350" fontFamily="var(--mono)" fontSize="8.5" fill="var(--ink-3)">770 BROADWAY · CURRENT</text>
         </g>
 
-        {/* Pin: Apartment / "the loop" */}
+        {/* Pin: Home base — Hell's Kitchen / west side highway, upper-mid Manhattan */}
         <g className="pin pin-home">
-            <line x1="246" y1="440" x2="246" y2="468" stroke="var(--ink)" strokeWidth="1.2" />
-            <rect x="240" y="466" width="12" height="12" fill="var(--paper)" stroke="var(--ink)" strokeWidth="1.5" transform="rotate(45 246 472)" />
-            <line x1="246" y1="440" x2="170" y2="440" stroke="var(--ink)" strokeWidth="1" strokeDasharray="2 2" />
-            <text x="165" y="438" fontFamily="var(--mono)" fontSize="10" fill="var(--ink)" textAnchor="end" fontWeight="600">HOME BASE</text>
-            <text x="165" y="450" fontFamily="var(--mono)" fontSize="8.5" fill="var(--ink-3)" textAnchor="end">EVENINGS · WEEKENDS</text>
+            <rect x="214" y="242" width="11" height="11" fill="var(--paper)" stroke="var(--ink)" strokeWidth="1.5" transform="rotate(45 219.5 247.5)" />
+            <line x1="214" y1="247" x2="170" y2="247" stroke="var(--ink)" strokeWidth="1" strokeDasharray="2 2" />
+            <text x="165" y="244" fontFamily="var(--mono)" fontSize="10" fill="var(--ink)" textAnchor="end" fontWeight="600">HOME BASE</text>
+            <text x="165" y="256" fontFamily="var(--mono)" fontSize="8.5" fill="var(--ink-3)" textAnchor="end">HELL&apos;S KITCHEN · 11TH AVE</text>
         </g>
 
         {/* Pin: Running loop (Central Park) */}
